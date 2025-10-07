@@ -11,11 +11,11 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 
-/* Topbar – desktop */
+/* Topbar chips (desktop) */
 .topbar{
   display:grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
-  gap:12px;
+  gap:14px;
   align-items:center;
   justify-items:center;
   padding:10px 16px;
@@ -24,30 +24,64 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:
   font-size:14px;
 }
 .topbar .item{
-  display:flex; align-items:center; gap:8px;
-  color:var(--muted); padding:8px 12px;
-  background:#f7fbff; border:1px solid #e8f2f7;
+  position:relative;
+  display:flex; align-items:center; gap:10px;
+  color:var(--muted);
+  padding:10px 14px;
+  background:#f7fbff;
+  border:1px solid #e8f2f7;
   border-radius:999px;
 }
-.topbar a.item{ text-decoration:none; color:inherit; }
-.topbar svg{ width:16px; height:16px; opacity:.8 }
-.topbar .label{ font-weight:600; color:#5f6c7e }
+.topbar .item .icon{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#eaf6fb;color:#1f6d84}
+.topbar .item .label{font-weight:700;color:#5f6c7e}
+.topbar .item .value{color:#2b3342}
+.topbar .item .link{text-decoration:none;color:inherit}
 
-/* Topbar – mediu (2 coloane) */
-@media (max-width:900px){
-  .topbar{ grid-template-columns: 1fr 1fr; justify-items:stretch }
-  .topbar .item{ justify-content:center }
+/* Popover card */
+.popover{
+  --pop-pad:14px;
+  position:absolute;
+  top:calc(100% + 10px);
+  left:0;
+  min-width:260px;
+  max-width:320px;
+  background:#fff;
+  border:1px solid #e8eef5;
+  box-shadow:0 16px 40px rgba(13,27,79,.12);
+  border-radius:14px;
+  padding:var(--pop-pad);
+  opacity:0; transform:translateY(8px); pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease;
+  z-index:50;
+}
+.item.show .popover{opacity:1; transform:none; pointer-events:auto}
+.pop-title{font-weight:700;color:var(--navy);margin-bottom:6px}
+.pop-action{display:block;width:100%;text-align:left;border:0;background:#f7fbff;color:#0d1b4f;padding:10px 12px;border-radius:10px;margin-top:8px;cursor:pointer;text-decoration:none}
+.pop-action:hover{background:#eef7fb}
+.pop-lines > div{padding:6px 0;border-top:1px dashed #e9eef5}
+.pop-lines > div:first-child{border-top:0}
+
+/* RESPONSIVE: icon-only on mobile */
+@media (max-width:620px){
+  .topbar{ grid-template-columns: repeat(3, 42px); gap:10px; justify-content:center }
+  .topbar .item{
+    padding:8px; width:42px; height:42px;
+    border-radius:50%;
+    justify-content:center;
+    background:#eaf6fb;
+    border:1px solid #d7edf6;
+  }
+  .topbar .item .label,
+  .topbar .item .value{ display:none } /* doar pictogramă */
+  .topbar .item .icon{ background:transparent; width:auto; height:auto }
+  /* poziționează popoverul central față de icon */
+  .topbar .item .popover{ left:50%; transform:translate(-50%, 10px); }
+  .topbar .item.show .popover{ transform:translate(-50%, 0) }
 }
 
-/* Topbar – telefon (1 coloană, text scurt) */
-@media (max-width:520px){
-  .topbar{ grid-template-columns: 1fr; gap:8px; padding:8px 12px }
-  .topbar .item{ justify-content:flex-start; padding:10px 12px }
-  .topbar svg{ width:18px; height:18px }
-  /* ascundem etichetele și păstrăm valorile – ocupă mai puțin */
-  .topbar .label{ display:none }
-  /* dacă ecran foarte îngust, ascunde programul (opțional) */
-  .topbar .item.program{ display:none }
+/* Extra: închidere când se iese din viewport */
+@media (prefers-reduced-motion: reduce){
+  .popover{ transition:none }
 }
 
 
