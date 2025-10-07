@@ -11,10 +11,45 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--dark);font-family:Poppins,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 
-/* Topbar */
-.topbar{display:flex;gap:18px;align-items:center;justify-content:center;padding:10px 16px;border-bottom:1px solid #e9eef5;background:var(--bg);font-size:14px}
-.topbar .item{display:flex;align-items:center;gap:8px;color:var(--muted)}
-.topbar svg{width:16px;height:16px;opacity:.8}
+/* Topbar – desktop */
+.topbar{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:12px;
+  align-items:center;
+  justify-items:center;
+  padding:10px 16px;
+  border-bottom:1px solid #e9eef5;
+  background:var(--bg);
+  font-size:14px;
+}
+.topbar .item{
+  display:flex; align-items:center; gap:8px;
+  color:var(--muted); padding:8px 12px;
+  background:#f7fbff; border:1px solid #e8f2f7;
+  border-radius:999px;
+}
+.topbar a.item{ text-decoration:none; color:inherit; }
+.topbar svg{ width:16px; height:16px; opacity:.8 }
+.topbar .label{ font-weight:600; color:#5f6c7e }
+
+/* Topbar – mediu (2 coloane) */
+@media (max-width:900px){
+  .topbar{ grid-template-columns: 1fr 1fr; justify-items:stretch }
+  .topbar .item{ justify-content:center }
+}
+
+/* Topbar – telefon (1 coloană, text scurt) */
+@media (max-width:520px){
+  .topbar{ grid-template-columns: 1fr; gap:8px; padding:8px 12px }
+  .topbar .item{ justify-content:flex-start; padding:10px 12px }
+  .topbar svg{ width:18px; height:18px }
+  /* ascundem etichetele și păstrăm valorile – ocupă mai puțin */
+  .topbar .label{ display:none }
+  /* dacă ecran foarte îngust, ascunde programul (opțional) */
+  .topbar .item.program{ display:none }
+}
+
 
 /* Navbar */
 .nav{position:sticky;top:0;z-index:40;background:var(--bg);backdrop-filter:saturate(180%) blur(6px);border-bottom:1px solid #eef2f7}
