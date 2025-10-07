@@ -1,0 +1,60 @@
+/* Folosește variabilele din styles.css (aceeași temă) */
+
+/* Hero mic, albastru deschis, cu “waves” */
+.pkg-hero{
+  position:relative;
+  background:var(--wave);
+  border-bottom:1px solid #e8eef5;
+  padding-bottom: 12px;
+}
+.pkg-hero::before{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:80px;
+  background:radial-gradient(120% 50px at 50% 0px, var(--wave) 60%, transparent 61%);
+}
+.pkg-hero-inner{max-width:1200px;margin:auto;padding:56px 18px 32px}
+.pkg-title{margin:0;color:var(--navy);font-size:clamp(28px,4.8vw,44px);font-weight:800}
+.pkg-sub{margin:8px 0 0;color:#2b3342;opacity:.85}
+
+/* Card pachet */
+.pkg-grid{display:grid;grid-template-columns:1fr;gap:26px}
+.pkg-card{
+  position:relative;
+  background:#fff;border:1px solid #e8eef5;border-radius:18px;padding:26px;
+  box-shadow:0 10px 30px rgba(13,27,79,.06);
+}
+.pkg-badge{
+  position:absolute;top:14px;right:14px;background:var(--blue);color:#fff;
+  font-weight:700;padding:6px 10px;border-radius:999px;font-size:12px;
+}
+.pkg-name{margin:0 0 6px;color:var(--navy)}
+.pkg-desc{margin:0 0 16px;color:#2b3342}
+.pkg-list{margin:0 0 18px;padding-left:22px}
+.pkg-list li{margin:8px 0}
+
+.pkg-price{display:flex;align-items:baseline;gap:8px;margin:6px 0 18px}
+.pkg-amount{font-size:42px;font-weight:800;color:var(--navy);line-height:1}
+.pkg-currency{font-weight:700;color:#5f6c7e}
+
+.pkg-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-lg{padding:14px 22px;border-radius:14px}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:14px;
+  background:#fff;color:var(--navy);border:1px solid #dce6ef;font-weight:600;cursor:pointer;
+}
+.btn-outline:hover{background:#f7fbff}
+
+/* note mici */
+.pkg-note{margin-top:12px;color:#6f7c8e;font-size:13px}
+
+/* Active link stil în meniu (opțional) */
+.menu a.active{color:var(--blue)}
+.menu a.active:after{background:var(--blue)}
+
+/* Mică animație de apariție (reuse .reveal din tema) */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* Responsiv */
+@media (max-width:640px){
+  .pkg-card{padding:20px}
+}
