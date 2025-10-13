@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Galerie cazuri — DentalHome</title>
+
+  <!-- font + tema globală a site-ului -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">   <!-- tema existentă -->
+  <link rel="stylesheet" href="gallery.css">  <!-- stiluri pentru pagina asta -->
+</head>
+<body>
+
+  <!-- Topbar (IDENTIC cu celelalte pagini) -->
+  <div class="topbar" id="topbar">
+    <a class="item tel" href="tel:0758639548" aria-label="Apelează 0758 639 548">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.15a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span class="label">Telefon:</span><span class="value">0758 639 548</span>
+    </a>
+    <a class="item addr" target="_blank" rel="noopener" href="https://maps.google.com/?q=Str.+Sieului,+3A,+Beclean">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <span class="label">Adresă:</span><span class="value">Str. Sieului, nr. 3A, Beclean</span>
+    </a>
+    <div class="item program">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </span>
+      <span class="label">Program:</span><span class="value">L–V 8:00–20:00, S–D: Închis</span>
+    </div>
+  </div>
+
+  <!-- Nav (IDENTIC, cu link activ pe Galerie) -->
+  <nav class="nav">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="Poze/sigla.jpg" alt="DentalHome"/>
+        <span class="brand-title">Dental <span style="font-weight:600">Home</span></span>
+      </a>
+      <button class="burger" aria-label="Meniu" id="burger"><span></span><span></span><span></span></button>
+      <div class="menu" id="menu">
+        <a href="index.html#echipa">Echipa</a>
+        <a href="about.html">Despre Noi</a>
+        <a href="index.html#servicii">Servicii</a>
+        <a href="gallery.html" class="active">Cazuri galerie foto</a>
+        <a href="packages.html">Pachete</a>
+        <a href="contact.html" class="btn">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header ca pe Home (wave) -->
+  <header class="gal-hero">
+    <div class="gal-hero-inner">
+      <h1>Galerie cazuri</h1>
+      <p>O selecție de cazuri din cabinet. </p>
+    </div>
+  </header>
+
+  <!-- GRID: poze mici, 2 pe rând desktop / 1 pe rând mobil -->
+  <main class="container">
+    <section class="gal-grid">
+      <article class="card reveal"><div class="thumb"><img src="Poze/1.jpg"  alt="Caz #1"></div><div class="meta"><h3>Caz #1</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/2.jpg"  alt="Caz #2"></div><div class="meta"><h3>Caz #2</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/3.jpg"  alt="Caz #3"></div><div class="meta"><h3>Caz #3</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/4.jpg"  alt="Caz #4"></div><div class="meta"><h3>Caz #4</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/5.jpg"  alt="Caz #5"></div><div class="meta"><h3>Caz #5</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/6.jpg"  alt="Caz #6"></div><div class="meta"><h3>Caz #6</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/7.jpg"  alt="Caz #7"></div><div class="meta"><h3>Caz #7</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/8.jpg"  alt="Caz #8"></div><div class="meta"><h3>Caz #8</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/9.jpg"  alt="Caz #9"></div><div class="meta"><h3>Caz #9</h3></div></article>
+      <article class="card reveal"><div class="thumb"><img src="Poze/10.jpg" alt="Caz #10"></div><div class="meta"><h3>Caz #10</h3></div></article>
+    </section>
+  </main>
+
+  <!-- Footer scurt (opțional poți păstra footerul tău complet) -->
+  <footer style="background:var(--navy);color:#c9d6ff">
+    <div class="container" style="padding:28px 18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <a href="index.html" style="text-decoration:none;color:#fff;font-weight:700">← Înapoi la Home</a>
+      <div>© 2025 DentalHome</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>   <!-- scriptul tău global (burger, etc.) -->
+  <script src="gallery.js"></script>
+</body>
+</html>

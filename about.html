@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Despre noi — DentalHome</title>
+
+  <!-- font + tema globală -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">  <!-- tema existentă a site-ului -->
+  <link rel="stylesheet" href="about.css">   <!-- stiluri pentru pagina asta -->
+</head>
+<body>
+
+  <!-- Topbar (identic cu celelalte pagini) -->
+  <div class="topbar" id="topbar">
+    <a class="item tel" href="tel:0758639548" aria-label="Apelează 0758 639 548">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.15a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+      </span>
+      <span class="label">Telefon:</span><span class="value">0758 639 548</span>
+    </a>
+    <a class="item addr" target="_blank" rel="noopener" href="https://maps.google.com/?q=Str.+Sieului,+3A,+Beclean">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <span class="label">Adresă:</span><span class="value">Str. Sieului, nr. 3A, Beclean</span>
+    </a>
+    <div class="item program">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </span>
+      <span class="label">Program:</span><span class="value">L–V 8:00–20:00, S–D: Închis</span>
+    </div>
+  </div>
+
+  <!-- Nav (identic) -->
+  <nav class="nav">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="Poze/sigla.jpg" alt="DentalHome"/>
+        <span class="brand-title">Dental <span style="font-weight:600">Home</span></span>
+      </a>
+      <button class="burger" aria-label="Meniu" id="burger"><span></span><span></span><span></span></button>
+      <div class="menu" id="menu">
+        <a href="index.html#echipa">Echipa</a>
+        <a href="about.html" class="active">Despre Noi</a>
+        <a href="index.html#servicii">Servicii</a>
+        <a href="gallery.html">Cazuri galerie foto</a>
+        <a href="packages.html">Pachete</a>
+        <a href="contact.html" class="btn">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero cu poza echipei -->
+  <header class="about-hero">
+    <div class="overlay"></div>
+    <img class="hero-bg" src="Poze/EchipaMedL.jpg" alt="Echipa DentalHome">
+    <div class="hero-inner">
+      <h1>Despre DentalHome</h1>
+      <p>Clinică dedicată întregii familii, cu grijă specială pentru copii, în Beclean (BN).</p>
+    </div>
+  </header>
+
+  <!-- Conținut -->
+  <main class="container about-grid">
+    <section class="panel reveal">
+      <h2>Cine suntem</h2>
+      <p>
+        Bine ați venit la <strong>DentalHome</strong> — clinica de stomatologie pentru întreaga familie,
+        specializată și în <strong>stomatologie pediatrică</strong>, situată în <strong>Beclean, județul Bistrița-Năsăud</strong>.
+        Oferim o gamă completă de servicii: de la <em>stomatologie generală</em> și <em>igienizare profesională</em>, la
+        <em>estetică dentară</em>, <em>implantologie</em> și <em>ortodonție</em>.
+      </p>
+      <p>
+        Misiunea noastră este simplă: <strong>zâmbete sănătoase, pe termen lung</strong>. Combinăm tehnologia modernă
+        cu o atitudine caldă și empatică, astfel încât fiecare vizită să fie ușoară și predictibilă, pentru adulți și copii.
+      </p>
+
+      <ul class="bullets">
+        <li>Abordare prietenoasă pentru cei mici (tratamente <strong>fără frică</strong>).</li>
+        <li>Planuri de tratament personalizate, explicate pe înțelesul tuturor.</li>
+        <li>Program flexibil, echipă atentă și comunicare rapidă.</li>
+      </ul>
+    </section>
+
+    <aside class="side-card reveal">
+      <div class="photo">
+        <img src="Poze/EchipaMedL.jpg" alt="Echipa DentalHome">
+      </div>
+      <div class="side-meta">
+        <h3>Adresă & program</h3>
+        <p><strong>Str. Sieului, nr. 3A, Beclean</strong></p>
+        <p>L–V: 8:00–20:00 &nbsp; • &nbsp; S–D: închis</p>
+        <a class="btn" href="contact.html">Programează-te</a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- De ce să ne alegi -->
+  <section class="features container">
+    <h2 class="center reveal">De ce să alegi DentalHome</h2>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Grijă reală</h3>
+        <p>Abordare empatică, explicată pe înțeles, ideală și pentru copii.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M7 7h10v10H7z"/></svg>
+        </div>
+        <h3>Tehnologie modernă</h3>
+        <p>Radiografii specifice, tratamente minim-invazive, rezultate predictibile.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 17l4 4 4-4"/><path d="M12 12V3"/></svg>
+        </div>
+        <h3>Confort & timp câștigat</h3>
+        <p>Program extins în timpul săptămânii și răspuns rapid la solicitări.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:var(--navy);color:#c9d6ff">
+    <div class="container" style="padding:28px 18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <a href="index.html" style="text-decoration:none;color:#fff;font-weight:700">← Înapoi la Home</a>
+      <div>© 2025 DentalHome</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>   <!-- scriptul tău global (burger etc.) -->
+  <script src="about.js"></script>
+</body>
+</html>

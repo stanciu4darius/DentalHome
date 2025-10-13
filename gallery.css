@@ -1,0 +1,58 @@
+/* Header ca pe Home */
+.gal-hero{background:var(--wave);border-bottom:1px solid #e8eef5}
+.gal-hero-inner{max-width:1200px;margin:auto;padding:48px 18px 28px}
+.gal-hero h1{margin:0;color:var(--navy);font-size:clamp(28px,5vw,48px);font-weight:800}
+.gal-hero p{margin:8px 0 0;color:#2b3342;opacity:.85}
+
+/* Container (folosește clasa .container din tema ta) */
+.container{max-width:1200px;margin:auto;padding:32px 18px}
+
+/* GRID compact: 2 pe rând, centrat; 1 pe mobil */
+.gal-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+  justify-items:center;
+}
+@media (max-width:760px){
+  .gal-grid{grid-template-columns:1fr; gap:14px}
+}
+
+/* Card mic & curat */
+.card{
+  width:100%;
+  max-width:340px;            /* ↓ ajustează 320–360px dacă vrei */
+  background:#fff;
+  border:1px solid #e8eef5;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(13,27,79,.06);
+  transform:translateY(12px); opacity:0;
+  transition:transform .6s cubic-bezier(.2,.6,.1,1), opacity .6s ease, box-shadow .25s ease;
+}
+.card.show{transform:none; opacity:1}
+.card:hover{box-shadow:0 14px 30px rgba(13,27,79,.12)}
+
+/* Thumb mic, uniform (poze mici care arată bine peste tot) */
+.thumb{
+  width:100%;
+  height: clamp(130px, 20vw, 180px);  /* ↓ micșorează aici dacă mai vrei */
+  overflow:hidden;
+  background:#f3f6fb;
+}
+.thumb img{
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+  transform:scale(1.01); transition:transform .5s cubic-bezier(.2,.6,.1,1);
+}
+.card:hover .thumb img{transform:scale(1.06)}
+
+/* Titlu card */
+.meta{padding:10px 12px}
+.meta h3{
+  margin:0; font-size:14px; color:var(--navy); font-weight:700; letter-spacing:.2px;
+}
+
+/* Animația de apariție (consistentă cu restul) */
+.reveal{opacity:0; transform:translateY(16px)}
+.reveal.show{opacity:1; transform:none}

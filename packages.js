@@ -24,10 +24,38 @@ function toast(msg){
   setTimeout(()=> t.remove(), 2200);
 }
 
-buyBtn?.addEventListener('click', ()=>{
-  // aici vom integra plata; deocamdată doar feedback
-  toast('Plata online va fi disponibilă în curând. Te putem programa telefonic!');
+
+buyBtn?.addEventListener('click', async () => {
+  try {
+    // trimitem detalii minime; prețul îl stabilește backend-ul (sursă de adevăr)
+    const resp = await fetch('https://backendul-tau.exemplu.com/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        packageCode: 'BASIC',
+        // opțional: email client, nume etc. dacă vrei precompletare
+      })
+    });
+    const data = await resp.json();
+
+    if (data.redirectUrl) {
+      window.location.href = data.redirectUrl; // redirect către pagina EuPlătesc
+    } else if (data.formHtml) {
+      // unele integrări cer POST cu formular; îl injectăm și îl trimitem
+      const div = document.createElement('div');
+      div.innerHTML = data.formHtml;
+      document.body.appendChild(div);
+      div.querySelector('form')?.submit();
+    } else {
+      alert('Nu am putut porni plata. Încearcă din nou.');
+    }
+
+  } catch (e) {
+    console.error(e);
+    alert('Eroare la inițierea plății.');
+  }
 });
+
 
 askBtn?.addEventListener('click', ()=>{
   // deschide email implicit cu subiect presetat
